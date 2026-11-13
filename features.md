@@ -1,0 +1,1 @@
+problem: There's no user-friendly, completely consolidated website that has all the apartments available in Hong Kong to rent, with a really intuitive, easy UX/UI. build it now and deply it, calling it findyourhome.hk

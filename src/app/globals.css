@@ -1,26 +1,66 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-brand: #e8453c;
+  --color-brand-dark: #c7352d;
+  --color-brand-soft: #fdecea;
+  --color-ink: #1c1917;
+  --color-muted: #78716c;
+  --color-line: #e7e5e4;
+  --color-canvas: #fafaf9;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-canvas);
+  color: var(--color-ink);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+/* Leaflet price pins */
+.price-pin {
+  transform: translate(-50%, -100%);
+  display: inline-block;
+  white-space: nowrap;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--color-ink);
+  font: 600 12px/1.4 var(--font-geist-sans), system-ui, sans-serif;
+  box-shadow: 0 1px 4px rgb(0 0 0 / 0.25);
+  border: 1px solid rgb(0 0 0 / 0.08);
+  transition: transform 120ms ease, background 120ms ease;
+}
+.price-pin.is-great {
+  background: #ecfdf5;
+  color: #047857;
+}
+.price-pin.is-active {
+  background: var(--color-ink);
+  color: #fff;
+  transform: translate(-50%, -100%) scale(1.12);
+  z-index: 1000;
+}
+.leaflet-div-icon.pin-host {
+  background: none;
+  border: none;
+}
+.leaflet-popup-content-wrapper {
+  border-radius: 14px;
+  padding: 0;
+  overflow: hidden;
+}
+.leaflet-popup-content {
+  margin: 0;
+  width: 240px !important;
+}
+.leaflet-container {
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
 }
